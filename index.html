@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quản trị máy bán hàng</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <!-- <i class='bx bxl-c-plus-plus icon  bx-md'></i> -->
+            <i class='bx bxl-slack icon bx-md'></i>
+            <div class="logo_name">SVM</div>
+            <i class='bx bx-menu  bx-md' id="btn"></i>
+            <!-- <iconify-icon icon="charm:menu-hamburger" height="50" width="40" id="btn" style="color:white"></iconify-icon> -->
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search  bx-md'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="./index2.html">
+                    <i class='bx bxs-dashboard bx-md'></i>
+                    <!-- <iconify-icon icon="carbon:grid" width="50" height="50" style="color:white" align="left"></iconify-icon> -->
+                    <span class="links_name">Trang chủ</span>
+                </a>
+                <span class="tooltip">Trang chủ</span>
+            </li>
+            <li>
+                <a href="./index3.html">
+                    <i class='bx bxs-calculator bx-rotate-180  bx-md' ></i>
+                    <!-- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAQJJREFUSEvtlo0NAUEQhb+rgBKogA5QASUogQpQASXQgQ5QgeiADpQgL9mVyzjJ7jobl5hkc8ne7L6dmTc/BRmlyIjFO7AJMAY6CY+5A3tgZ89WgfWBcwKIPdIFruXNKrAlsKgBbA5sYsFO7oAsbgE39+I20HP/rI62V4Ae/pQQy7zOERiULhkCB3eT1WkmWGg4a3FjVjDlzxYQYdYOeeS+Yp8nTS2W+Uu+QhBP36mrKGKllqqL9iRWJ5mNoTGyeklu/Ce13OirTDNiloUgF2CWgOQTO4qNYqESN1ZsdwhqMVnB1NJVA2PFV5qgTp11BpElmq60PpmuXrzyE3NjbJyC9B+j8F4cbBugCAAAAABJRU5ErkJggg=="/> -->
+                    
+                    <!-- <iconify-icon class="quanlymay" icon="game-icons:vending-machine" width="50" height="50" style="color:white"></iconify-icon> -->
+                    <span class="links_name">Quản lý máy</span>
+                </a>
+                <span class="tooltip">Quản lý máy</span>
+            </li>
+            <li>
+                <a href="index4.html">
+                    <i class='bx bxs-report bx-md'></i>
+                    <!-- <iconify-icon icon="entypo:back-in-time" width="50" height="50" style="color:white"></iconify-icon> -->
+                    <span class="links_name">Lịch sử mua hàng</span>
+                </a>
+                <span class="tooltip">Lịch sử mua hàng</span>
+            </li>
+            <li>
+                <a href="./index4.html">
+                    <i class='bx bx-user bx-md'></i>
+                    <span class="links_name">Về sản phẩm này</span>
+                </a>
+                <span class="tooltip">Về sản phẩm này</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <div class="name_job">
+                        <div class="name">VVTrung - 20181800</div>
+                        <div class="job">GVHD: Nguyễn Tuấn Ninh</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out bx-md' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Trang chủ</div>
+    </section>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+</body>
+
+
+
+
+
+</html>
